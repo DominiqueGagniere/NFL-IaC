@@ -1,16 +1,12 @@
 version: '3'
 services: 
-  nginx-manager:
-    image: 'jc21/nginx-proxy-manager:latest'
-    restart: unless-stopped
-    ports:
-      - '80:80'
-      - '81:81'
-      - '443:443'
+  nginx:
+    image: nginx:latest
+    ports: 
+    - "80:80"
     volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
-
+    - ./src:/usr/share/nginx/html
+    
 # Nester Service
   nester-uno:
     build: .
