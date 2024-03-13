@@ -1,5 +1,7 @@
 version: '3'
 services: 
+  nginx:
+    build:
 # Nester Service
   nester-uno:
     build: .
